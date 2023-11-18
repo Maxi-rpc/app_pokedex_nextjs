@@ -1,7 +1,7 @@
 
 
 [![version](https://img.shields.io/badge/version-1.0.0-blue)]()
-[![web](https://img.shields.io/badge/live-web-blue)](https://maxi-rpc.github.io/a/)
+[![web](https://img.shields.io/badge/live-web-blue)](https://maxi-rpc.github.io/app_pokedex_nextjs/)
 # App Pokedex - Next JS
 
 Aplicación web que muestra todos los pokemons que existen hasta la actualidad.
