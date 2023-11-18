@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+[![version](https://img.shields.io/badge/version-1.0.0-blue)]()
+[![web](https://img.shields.io/badge/live-web-blue)](https://maxi-rpc.github.io//)
+# App Pokedex - Next JS
+
+Aplicación web que muestra todos los pokemons que existen hasta la actualidad.
+<br>
+Github actions se utiliza para las nuevas features que vayan sumando al main.
+
+## Tecnologías
+
+[![html5](https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white&labelColor=101010)]()
+[![css3](https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=css3&logoColor=white&labelColor=101010)]()
+[![javascript](https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white&labelColor=101010)]()
+[![bootstrap](https://img.shields.io/badge/bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white&labelColor=101010)]()
+[![react](https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white&labelColor=101010)]()
+
+## Screenshots
+
+![App Screenshot](https://raw.githubusercontent.com/Maxi-rpc/app_weather/main/public/images/app_weather_main.png)
+
+
+## Uso/Ejemplo
+Se debe completar los campos: 
+- Country ->  País
+- Province -> Provincia
+
+Inputs
+
+![App Screenshot](https://raw.githubusercontent.com/Maxi-rpc/app_weather/main/public/images/app_weather_inputs.png)
+
+Weather container
+
+![App Screenshot](https://raw.githubusercontent.com/Maxi-rpc/app_weather/main/public/images/app_weather_weather.png)
+## Run Locally
+
+Clone the project
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  git clone https://link-to-project
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Go to the project directory
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+  cd my-project
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Install dependencies
 
-## Learn More
+```bash
+  npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+Start the server
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+  npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Autor
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [@maxi-rpc](https://github.com/Maxi-rpc)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
