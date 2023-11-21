@@ -2,7 +2,7 @@ import { Inter } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 // imports
-import { HeaderComponents } from "@/components";
+import { HeaderComponents, FooterComponents } from "@/components";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +17,7 @@ export default function RootLayout({ children }) {
 			<body className={inter.className} data-bs-theme="dark">
 				<HeaderComponents />
 				{children}
+				<FooterComponents />
 			</body>
 		</html>
 	);

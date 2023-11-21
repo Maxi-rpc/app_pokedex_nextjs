@@ -1,1 +1,1 @@
-export { HeaderComponents } from './layout/HeaderComponents'
+export { HeaderComponents, FooterComponents } from "./layout";

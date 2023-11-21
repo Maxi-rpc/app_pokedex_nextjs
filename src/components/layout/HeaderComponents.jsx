@@ -1,33 +1,12 @@
 "use client";
 // imports
 import Image from "next/image";
-// material icon
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import CodeIcon from "@mui/icons-material/Code";
+import { User } from "@/constants/userconfig";
 // bootstrap
-import { Container, Row, Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Container, Row, Navbar, Nav } from "react-bootstrap";
 // Component header
-const social = [
-	{
-		name: "Github",
-		url: "https://github.com/Maxi-rpc",
-		icon: <GitHubIcon />,
-	},
-	{
-		name: "Linkedin",
-		url: "https://www.linkedin.com/in/maximiliano-g-miranda/",
-		icon: <LinkedInIcon />,
-	},
-	{
-		name: "Repositorio",
-		url: "https://github.com/Maxi-rpc/app_pokedex_nextjs",
-		icon: <CodeIcon />,
-	},
-];
-
 export const HeaderComponents = () => {
-	const links = social;
+	const links = User.social;
 	const listLinks = links.map((item, index) => (
 		<Nav.Link
 			key={index}
