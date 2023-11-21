@@ -1,1 +1,7 @@
-export { HeaderComponents, FooterComponents } from "./layout";
+export {
+	HeaderComponents,
+	FooterComponents,
+	ContainerComponents,
+} from "./layout";
+export { FormSearch } from "./forms";
+export { Loader } from "./loaders";
