@@ -31,9 +31,7 @@ export default function Home() {
 					<Row className="text-center my-2">
 						<h1>Home</h1>
 					</Row>
-					<Row className="justify-content-center">
-						<FormSearch handleChange={handleSearch} />
-					</Row>
+					<FormSearch handleChange={handleSearch} />
 				</main>
 			</ContainerComponents>
 		</>
