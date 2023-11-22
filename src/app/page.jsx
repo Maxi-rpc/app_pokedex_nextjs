@@ -9,6 +9,8 @@ import {
 } from "@/components";
 // bootstrap
 import { Row } from "react-bootstrap";
+// services
+import { get_pokemon_by_name } from "@/services";
 // page Home
 export default function Home() {
 	const [search, setSearch] = useState("");
@@ -16,8 +18,14 @@ export default function Home() {
 
 	const handleSearch = (value) => {
 		setSearch(value);
-		console.log(search);
 	};
+
+	useEffect(() => {
+		const testget = async () => {
+			await get_pokemon_by_name();
+		};
+		testget();
+	}, []);
 
 	if (!listPokemonName) {
 		return (
