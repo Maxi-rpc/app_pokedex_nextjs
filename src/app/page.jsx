@@ -1,7 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
 // imports
-import { ContainerComponents, FormSearch, Loader } from "@/components";
+import {
+	ContainerComponents,
+	FormSearch,
+	Loader,
+	ContainerMain,
+} from "@/components";
 // bootstrap
 import { Row } from "react-bootstrap";
 // page Home
@@ -32,6 +37,7 @@ export default function Home() {
 						<h1>Home</h1>
 					</Row>
 					<FormSearch handleChange={handleSearch} />
+					<ContainerMain />
 				</main>
 			</ContainerComponents>
 		</>
