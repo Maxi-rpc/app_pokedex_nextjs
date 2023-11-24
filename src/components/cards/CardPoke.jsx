@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 // imports
 import { CardMain } from "./CardMain";
 // bootstrap
-import { Card, Spinner } from "react-bootstrap";
+import { Card, Spinner, Badge, Row, Col } from "react-bootstrap";
 // services
 import { get_pokemon_by_name } from "@/services";
 // components cardpoke
@@ -16,8 +16,8 @@ export const CardPoke = ({ name, url }) => {
 		abilities: "",
 		sprites: "",
 		stats: "",
-		types: "",
 	});
+	const [types, setTypes] = useState([]);
 
 	useEffect(() => {
 		const get_data = async (name) => {
@@ -27,8 +27,9 @@ export const CardPoke = ({ name, url }) => {
 					id: datos.id,
 					name: datos.name,
 					sprites: datos.sprites,
-					types: datos.types,
 				});
+				setTypes(datos.types);
+				console.log(datos.types);
 			}
 		};
 		get_data();
@@ -41,6 +42,12 @@ export const CardPoke = ({ name, url }) => {
 			</CardMain>
 		</>;
 	}
+
+	const listTypes = types.map((tp, index) => (
+		<Col key={index} xs="6" sm="6" md="6" className="text-center text-capitalize">
+			<Badge bg="primary">{tp.type.name}</Badge>
+		</Col>
+	));
 
 	return (
 		<>
@@ -55,6 +62,9 @@ export const CardPoke = ({ name, url }) => {
 						width="150rem"
 					/>
 				</Card.Body>
+				<Card.Footer>
+					<Row className="justify-content-between">{listTypes}</Row>
+				</Card.Footer>
 			</CardMain>
 		</>
 	);
