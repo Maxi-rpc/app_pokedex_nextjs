@@ -11,7 +11,7 @@ import {
 // bootstrap
 import { Row } from "react-bootstrap";
 // services
-import { get_pokemon_by_name, get_pokemons } from "@/services";
+import { get_pokemons } from "@/services";
 // page Home
 export default function Home() {
 	const [search, setSearch] = useState("");
@@ -49,7 +49,7 @@ export default function Home() {
 						<h1>Home</h1>
 					</Row>
 					<FormSearch handleChange={handleSearch} />
-					<PokemonContainer />
+					<PokemonContainer listPokemon={listPokemonName} />
 				</main>
 			</ContainerComponents>
 		</>

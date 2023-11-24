@@ -1,10 +1,21 @@
 // imports
+import { ContainerMain, CardPoke } from "@/components";
 // bootstrap
+import { Row, Col } from "react-bootstrap";
 // components pokemon container
-export const PokemonContainer = () => {
+export const PokemonContainer = ({ listPokemon }) => {
+	const listCards = listPokemon.map((item, index) => (
+		<Col key={index} className="my-2" md="3" sm="3">
+			<CardPoke name={item.name} />
+		</Col>
+	));
+
 	return (
 		<>
-			<h1>Pokemon container listado de todos</h1>
+			<ContainerMain>
+				<h1>Pokemon container listado de todos</h1>
+				<Row>{listCards}</Row>
+			</ContainerMain>
 		</>
 	);
 };
