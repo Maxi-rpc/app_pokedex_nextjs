@@ -1,6 +1,6 @@
 // imports
 // bootstrap
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Row, Col, Card } from "react-bootstrap";
 // components container main
 export const ContainerMain = ({ listPokemon }) => {
 	return (
