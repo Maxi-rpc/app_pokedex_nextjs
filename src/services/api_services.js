@@ -4,11 +4,19 @@ import axios from "axios";
 const API_URL = "https://pokeapi.co/api/v2/";
 const API_POKEMON = API_URL + "pokemon/";
 
-export const get_pokemons = (offset = 0, limit = 10) => {
+export const get_pokemons = async (offset, limit) => {
 	const offse = offset ? offset : 0;
-	const limite = limit ? limit : 1010;
-	let API_POKEMONS = `https://pokeapi.co/api/v2/pokemon?limit=${limite}&offset=${offse}`;
-	return axios.get(API_POKEMONS);
+	const limite = limit ? limit : 3;
+	const API_POKEMONS = `https://pokeapi.co/api/v2/pokemon?limit=${limite}&offset=${offse}`;
+	const res = await axios.get(API_POKEMONS);
+
+	const { status } = res;
+	const { results } = res.data;
+
+	const datos = {
+		list: results,
+	};
+	return { status, datos };
 };
 
 export const get_pokemon_by_name = async (pokename = "lucario") => {
@@ -27,5 +35,5 @@ export const get_pokemon_by_name = async (pokename = "lucario") => {
 		stats: stats,
 		types: types,
 	};
-	return { stats, datos };
+	return { status, datos };
 };

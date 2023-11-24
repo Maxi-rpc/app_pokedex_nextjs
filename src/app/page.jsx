@@ -10,7 +10,7 @@ import {
 // bootstrap
 import { Row } from "react-bootstrap";
 // services
-import { get_pokemon_by_name } from "@/services";
+import { get_pokemon_by_name, get_pokemons } from "@/services";
 // page Home
 export default function Home() {
 	const [search, setSearch] = useState("");
@@ -21,13 +21,16 @@ export default function Home() {
 	};
 
 	useEffect(() => {
-		const testget = async () => {
-			await get_pokemon_by_name();
+		const get_list = async () => {
+			const { status, datos } = await get_pokemons();
+			if (status == 200) {
+				setListPokemonName(datos);
+			}
 		};
-		testget();
+		get_list();
 	}, []);
 
-	if (!listPokemonName) {
+	if (listPokemonName.length == 0) {
 		return (
 			<>
 				<ContainerComponents>
@@ -45,7 +48,7 @@ export default function Home() {
 						<h1>Home</h1>
 					</Row>
 					<FormSearch handleChange={handleSearch} />
-					<ContainerMain />
+					<ContainerMain listPokemon={listPokemonName} />
 				</main>
 			</ContainerComponents>
 		</>
