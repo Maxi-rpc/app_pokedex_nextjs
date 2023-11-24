@@ -2,7 +2,7 @@
 // bootstrap
 import { Row, Col, Card } from "react-bootstrap";
 // components container main
-export const ContainerMain = ({ listPokemon }) => {
+export const ContainerMain = () => {
 	return (
 		<>
 			<Row className="my-2">
@@ -10,7 +10,7 @@ export const ContainerMain = ({ listPokemon }) => {
 					<Card className="border border-0">
 						<Card.Body>
 							<Row>
-								<h1>card pokemon</h1>
+								<h1>ContainerPokemon</h1>
 							</Row>
 						</Card.Body>
 					</Card>

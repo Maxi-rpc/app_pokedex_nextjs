@@ -6,6 +6,7 @@ import {
 	FormSearch,
 	Loader,
 	ContainerMain,
+	PokemonContainer,
 } from "@/components";
 // bootstrap
 import { Row } from "react-bootstrap";
@@ -48,7 +49,7 @@ export default function Home() {
 						<h1>Home</h1>
 					</Row>
 					<FormSearch handleChange={handleSearch} />
-					<ContainerMain listPokemon={listPokemonName} />
+					<PokemonContainer />
 				</main>
 			</ContainerComponents>
 		</>
