@@ -5,7 +5,6 @@ import {
 	ContainerComponents,
 	FormSearch,
 	Loader,
-	ContainerMain,
 	PokemonContainer,
 } from "@/components";
 // bootstrap

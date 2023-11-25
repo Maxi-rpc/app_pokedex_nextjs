@@ -20,7 +20,7 @@ export const CardPoke = ({ name, url }) => {
 	const [types, setTypes] = useState([]);
 
 	useEffect(() => {
-		const get_data = async (name) => {
+		const get_data = async () => {
 			const { status, datos } = await get_pokemon_by_name(name);
 			if (status == 200) {
 				setData({
@@ -29,7 +29,6 @@ export const CardPoke = ({ name, url }) => {
 					sprites: datos.sprites,
 				});
 				setTypes(datos.types);
-				console.log(datos.types);
 			}
 		};
 		get_data();
@@ -44,7 +43,13 @@ export const CardPoke = ({ name, url }) => {
 	}
 
 	const listTypes = types.map((tp, index) => (
-		<Col key={index} xs="6" sm="6" md="6" className="text-center text-capitalize">
+		<Col
+			key={index}
+			xs="6"
+			sm="6"
+			md="6"
+			className="text-center text-capitalize"
+		>
 			<Badge bg="primary">{tp.type.name}</Badge>
 		</Col>
 	));
