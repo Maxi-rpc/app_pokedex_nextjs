@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import { Card, Spinner, Badge, Row, Col } from "react-bootstrap";
 // services
 import { get_pokemon_by_name } from "@/services";
-// components cardpoke
-export const CardPoke = ({ name, url }) => {
+// components pokemon detail
+export const PokeDetail = ({ name }) => {
 	const [data, setData] = useState({
 		id: "",
 		name: "",
@@ -22,6 +22,7 @@ export const CardPoke = ({ name, url }) => {
 		const get_data = async () => {
 			const { status, datos } = await get_pokemon_by_name(name);
 			if (status == 200) {
+				console.log(datos.sprites);
 				setData({
 					id: datos.id,
 					name: datos.name,
@@ -55,21 +56,26 @@ export const CardPoke = ({ name, url }) => {
 
 	return (
 		<>
-			<Card>
-				<Card.Header className="text-capitalize">
-					#{data.id.toString().padStart(3, 0)} - {data.name}
-				</Card.Header>
-				<Card.Body>
-					<Card.Img
-						src={data.sprites.front_default}
-						alt={data.name}
-						width="150rem"
-					/>
-				</Card.Body>
-				<Card.Footer>
-					<Row className="justify-content-between">{listTypes}</Row>
-				</Card.Footer>
-			</Card>
+			<Row className="justify-content-center">
+				<Col xs="10" sm="10" md="8" lg="8">
+					<Card>
+						<Card.Header className="text-capitalize">
+							#{data.id.toString().padStart(3, 0)} - {data.name}
+						</Card.Header>
+						<Card.Body>
+							<Card.Img
+								src={data.sprites.other["official-artwork"].front_default}
+								alt={data.name}
+								width="10rem"
+							/>
+							<Row className="justify-content-between">{listTypes}</Row>
+							<Row>
+								<h1>descr</h1>
+							</Row>
+						</Card.Body>
+					</Card>
+				</Col>
+			</Row>
 		</>
 	);
 };

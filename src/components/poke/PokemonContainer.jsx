@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 // imports
 import { ContainerMain, CardPoke } from "@/components";
 // bootstrap
@@ -14,7 +15,9 @@ export const PokemonContainer = ({ listPokemon }) => {
 
 	const listCards = items.map((item) => (
 		<Col key={item.name} className="my-2" xs="6" sm="3" md="3" lg="2">
-			<CardPoke name={item.name} />
+			<Link href={`/detail/${item.name}`}>
+				<CardPoke name={item.name} />
+			</Link>
 		</Col>
 	));
 
