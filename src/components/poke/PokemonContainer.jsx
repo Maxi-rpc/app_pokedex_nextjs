@@ -13,7 +13,7 @@ export const PokemonContainer = ({ listPokemon }) => {
 	}, [listPokemon]);
 
 	const listCards = items.map((item) => (
-		<Col key={item.name} className="my-2" md="3" sm="3">
+		<Col key={item.name} className="my-2" xs="6" sm="3" md="3" lg="2">
 			<CardPoke name={item.name} />
 		</Col>
 	));
@@ -22,7 +22,7 @@ export const PokemonContainer = ({ listPokemon }) => {
 		<>
 			<ContainerMain>
 				<h1>Pokemon container listado de todos</h1>
-				<Row>{listCards}</Row>
+				<Row className="justify-content-center">{listCards}</Row>
 			</ContainerMain>
 		</>
 	);
