@@ -6,7 +6,7 @@ const API_POKEMON = API_URL + "pokemon/";
 
 export const get_pokemons = async (offset, limit) => {
 	const offse = offset ? offset : 0;
-	const limite = limit ? limit : 8;
+	const limite = limit ? limit : 9;
 	const API_POKEMONS = `https://pokeapi.co/api/v2/pokemon?limit=${limite}&offset=${offse}`;
 	const res = await axios.get(API_POKEMONS);
 

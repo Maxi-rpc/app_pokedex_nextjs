@@ -22,7 +22,9 @@ export const PokemonContainer = ({ listPokemon }) => {
 		<>
 			<ContainerMain>
 				<h1>Pokemon container listado de todos</h1>
-				<Row className="justify-content-center">{listCards}</Row>
+				<Row className="justify-content-center align-items-stretch">
+					{listCards}
+				</Row>
 			</ContainerMain>
 		</>
 	);
