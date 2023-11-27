@@ -22,6 +22,9 @@ export const get_pokemon_by_name = async (pokename = "lucario") => {
 	const { status, data } = res;
 
 	const { id, name, height, weight, abilities, sprites, stats, types } = data;
+	const { other } = sprites;
+	other.oa = other["official-artwork"];
+	sprites.other = other;
 
 	const datos = {
 		id: id,
