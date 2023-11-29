@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import MaleIcon from "@mui/icons-material/Male";
 import FemaleIcon from "@mui/icons-material/Female";
 // bootstrap
+import Carousel from "react-bootstrap/Carousel";
 import { Card, Spinner, Badge, Row, Col, Image, Button } from "react-bootstrap";
 // services
 import { get_pokemon_by_name } from "@/services";
@@ -15,6 +16,7 @@ export const PokeDetail = ({ name }) => {
 		height: "",
 		weight: "",
 		sprites: "",
+		images: "",
 		stats: "",
 	});
 	const [types, setTypes] = useState([]);
@@ -33,6 +35,7 @@ export const PokeDetail = ({ name }) => {
 					id: datos.id,
 					name: datos.name,
 					sprites: datos.sprites,
+					images: datos.images,
 				});
 				setTypes(datos.types);
 				setAbilities(datos.abilities);
@@ -77,6 +80,37 @@ export const PokeDetail = ({ name }) => {
 					<Button variant="danger" size="sm">
 						<FemaleIcon />
 					</Button>
+				</Col>
+			</Row>
+			<Row>
+				<Col>
+					<Card>
+						<Card.Header>height</Card.Header>
+						<Card.Body></Card.Body>
+					</Card>
+					<Card>
+						<Card.Header>weight</Card.Header>
+						<Card.Body></Card.Body>
+					</Card>
+				</Col>
+				<Col>
+					<Carousel>
+						<Carousel.Item>
+							<Image src={data.sprites.front_default} alt="" />
+							<Carousel.Caption>
+								<h3>Normal</h3>
+							</Carousel.Caption>
+						</Carousel.Item>
+						<Carousel.Item>
+							<Image src={data.sprites.front_default} alt="" />
+							<Carousel.Caption>
+								<h3>Shiny</h3>
+							</Carousel.Caption>
+						</Carousel.Item>
+					</Carousel>
+				</Col>
+				<Col>
+					<h6>types</h6>
 				</Col>
 			</Row>
 		</>
