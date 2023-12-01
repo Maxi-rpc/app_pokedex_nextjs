@@ -16,6 +16,7 @@ export async function generateStaticParams() {
 
 export default function Detail({ params }) {
 	const { name } = params;
+
 	return (
 		<>
 			<ContainerComponents>

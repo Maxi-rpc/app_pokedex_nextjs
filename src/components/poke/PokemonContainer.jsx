@@ -1,5 +1,4 @@
-"use client";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import Link from "next/link";
 // imports
 import { ContainerMain, CardPoke } from "@/components";
@@ -7,13 +6,13 @@ import { ContainerMain, CardPoke } from "@/components";
 import { Row, Col } from "react-bootstrap";
 // components pokemon container
 export const PokemonContainer = ({ listPokemon }) => {
-	const [items, setItems] = useState([]);
+	// const [items, setItems] = useState([]);
 
-	useEffect(() => {
-		setItems(listPokemon);
-	}, [listPokemon]);
+	// useEffect(() => {
+	// 	setItems(listPokemon);
+	// }, [listPokemon]);
 
-	const listCards = items.map((item) => (
+	const listCards = listPokemon.map((item) => (
 		<Col key={item.name} className="my-2" xs="6" sm="3" md="3" lg="2">
 			<Link href={`/detail/${item.name}`}>
 				<CardPoke name={item.name} />

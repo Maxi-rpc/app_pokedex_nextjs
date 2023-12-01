@@ -11,36 +11,37 @@ import { get_pokemon_by_name } from "@/services";
 // components pokemon detail
 export const PokeDetail = ({ name }) => {
 	const [data, setData] = useState({
-		id: "",
-		name: "",
-		height: "",
-		weight: "",
-		sprites: "",
-		images: "",
-		stats: "",
+		id: "id",
+		name: "name",
+		height: "height",
+		weight: "weight",
+		abilities: "abilities",
+		sprites: "sprites",
+		images: "images",
+		stats: "stats",
+		types: "types",
 	});
 	const [types, setTypes] = useState([]);
-	const [abilities, setAbilities] = useState([]);
 
-	const parserNum = (num) => {
+	const parserNum = (num = "") => {
 		return num.toString().padStart(3, 0);
 	};
 
+	const listTypes = types.map((type) => (
+		<>
+			<h1>type</h1>
+		</>
+	));
+
 	useEffect(() => {
 		const get_data = async () => {
-			const { status, datos } = await get_pokemon_by_name(name);
-			if (status == 200) {
-				console.log(datos);
-				setData({
-					id: datos.id,
-					name: datos.name,
-					sprites: datos.sprites,
-					images: datos.images,
-				});
-				setTypes(datos.types);
-				setAbilities(datos.abilities);
+			const res = await get_pokemon_by_name(name);
+			if (res.status == 200) {
+				setData(res.datos);
+				console.log(res.datos.types);
 			}
 		};
+
 		get_data();
 	}, [name]);
 
@@ -51,19 +52,6 @@ export const PokeDetail = ({ name }) => {
 			</Card>
 		</>;
 	}
-
-	const listTypes = types.map((tp, index) => (
-		<Col key={index} xs="6" sm="6" md="6" className="text-center">
-			<Badge bg="primary">{tp.type.name}</Badge>
-		</Col>
-	));
-
-	const listAbilities = abilities.map((ab, index) => (
-		<h6 key={index}>
-			{ab.ability.name} {ab.is_hidden == true && "(Hidden)"}
-		</h6>
-	));
-
 	return (
 		<>
 			<Row className="text-capitalize mx-auto">
@@ -86,23 +74,23 @@ export const PokeDetail = ({ name }) => {
 				<Col>
 					<Card>
 						<Card.Header>height</Card.Header>
-						<Card.Body></Card.Body>
+						<Card.Body>{data.height} mts</Card.Body>
 					</Card>
 					<Card>
 						<Card.Header>weight</Card.Header>
-						<Card.Body></Card.Body>
+						<Card.Body>{data.weight} lbs </Card.Body>
 					</Card>
 				</Col>
 				<Col>
 					<Carousel>
 						<Carousel.Item>
-							<Image src={data.sprites.front_default} alt="" />
+							<Image src={data && data.images.front_default} alt="" />
 							<Carousel.Caption>
 								<h3>Normal</h3>
 							</Carousel.Caption>
 						</Carousel.Item>
 						<Carousel.Item>
-							<Image src={data.sprites.front_default} alt="" />
+							<Image src={data.images.front_shiny} alt="" />
 							<Carousel.Caption>
 								<h3>Shiny</h3>
 							</Carousel.Caption>

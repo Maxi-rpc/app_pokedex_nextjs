@@ -1,4 +1,3 @@
-"use client";
 // imports
 // bootstrap
 import { Row, Col, Card } from "react-bootstrap";
