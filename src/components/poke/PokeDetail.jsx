@@ -71,17 +71,22 @@ export const PokeDetail = ({ name }) => {
 				</Col>
 			</Row>
 			<Row>
-				<Col>
+				<Col xs="3" sm="3" md="3" lg="3">
 					<Card>
-						<Card.Header>height</Card.Header>
-						<Card.Body>{data.height} mts</Card.Body>
+						<Card.Header className="text-capitalize">height</Card.Header>
+						<Card.Body className="text-end">
+							<Card.Title>{data.height} mts</Card.Title>
+						</Card.Body>
 					</Card>
+					<div className="my-2"></div>
 					<Card>
-						<Card.Header>weight</Card.Header>
-						<Card.Body>{data.weight} lbs </Card.Body>
+						<Card.Header className="text-capitalize">weight</Card.Header>
+						<Card.Body className="text-end">
+							<Card.Title>{data.weight} kg</Card.Title>
+						</Card.Body>
 					</Card>
 				</Col>
-				<Col>
+				<Col xs="4" sm="4" md="4" lg="4">
 					<Carousel>
 						<Carousel.Item>
 							<Image src={data && data.images.front_default} alt="" />
@@ -97,7 +102,7 @@ export const PokeDetail = ({ name }) => {
 						</Carousel.Item>
 					</Carousel>
 				</Col>
-				<Col>
+				<Col xs="4" sm="4" md="4" lg="4">
 					<h6>types</h6>
 				</Col>
 			</Row>
