@@ -7,7 +7,7 @@ import { Container, Navbar } from "react-bootstrap";
 export const FooterComponents = () => {
 	return (
 		<>
-			<Navbar fixed="bottom" className="bg-body-tertiary">
+			<Navbar className="bg-body-tertiary">
 				<Container className="justify-content-center">
 					<p className="mb-0">Creado por {User.creator}</p>
 				</Container>

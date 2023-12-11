@@ -1,10 +1,4 @@
-export {
-	HeaderComponents,
-	FooterComponents,
-	ContainerComponents,
-} from "./layout";
-export { FormSearch } from "./forms";
-export { Loader } from "./loaders";
-export { ContainerMain } from "./containers";
-export { CardMain, CardPoke } from "./cards";
-export { PokemonContainer } from "./poke";
+export { HeaderComponents } from "./layout/HeaderComponents";
+export { FooterComponents } from "./layout/FooterComponents";
+export { ContainerComponents } from "./layout/ContainerComponents";
+export { Loader } from "./loaders/Loader";

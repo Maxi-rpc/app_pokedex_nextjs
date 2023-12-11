@@ -18,20 +18,28 @@ export const get_pokemons = async (offset, limit) => {
 };
 
 export const get_pokemon_by_name = async (pokename = "lucario") => {
-	const res = await axios.get(API_POKEMON + pokename);
-	const { status, data } = res;
+	try {
+		const res = await axios.get(API_POKEMON + pokename);
+		const { status, data } = res;
 
-	const { id, name, height, weight, abilities, sprites, stats, types } = data;
+		const { id, name, height, weight, abilities, sprites, stats, types } = data;
+		const { other } = sprites;
+		const images = other.home;
 
-	const datos = {
-		id: id,
-		name: name,
-		height: height,
-		weight: weight,
-		abilities: abilities,
-		sprites: sprites,
-		stats: stats,
-		types: types,
-	};
-	return { status, datos };
+		const datos = {
+			id: id,
+			name: name,
+			height: height,
+			weight: weight,
+			abilities: abilities,
+			sprites: sprites,
+			images: images,
+			stats: stats,
+			types: types,
+		};
+		return { status, datos };
+	} catch (error) {
+		const status = 404;
+		return { status, error };
+	}
 };

@@ -23,7 +23,7 @@ export const HeaderComponents = () => {
 			<Navbar expand="lg" className="bg-body-tertiary">
 				<Container>
 					<Navbar.Brand href="#home">
-						Pokedex - Next JS - Bootstrap
+						Pokedex - Next JS - React Bootstrap
 					</Navbar.Brand>
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
 					<Navbar.Collapse id="basic-navbar-nav">
