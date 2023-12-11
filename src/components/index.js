@@ -1,9 +1,4 @@
 export { HeaderComponents } from "./layout/HeaderComponents";
 export { FooterComponents } from "./layout/FooterComponents";
 export { ContainerComponents } from "./layout/ContainerComponents";
-export { FormSearch } from "./forms/FormSearch";
 export { Loader } from "./loaders/Loader";
-export { ContainerMain } from "./containers/ContainerMain";
-export { CardPoke } from "./cards/CardPoke";
-export { PokemonContainer } from "./poke/PokemonContainer";
-export { PokeDetail } from "./poke/PokeDetail";
