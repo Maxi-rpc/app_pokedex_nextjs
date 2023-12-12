@@ -19,6 +19,8 @@ export default function Home() {
 			const data = await get_pokemons();
 			if (data.status == 200) {
 				setIsAlert({ show: true, msg: data.status });
+			} else {
+				setIsAlert({ show: true, msg: data.error });
 			}
 		};
 		get_items();

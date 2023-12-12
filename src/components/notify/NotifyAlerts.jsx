@@ -9,6 +9,8 @@ export const NotifyAlerts = ({ message }) => {
 
 	const toggleShow = () => setShow(!show);
 
+	const date = new Date();
+
 	return (
 		<>
 			<ToastContainer
@@ -16,10 +18,10 @@ export const NotifyAlerts = ({ message }) => {
 				position={"top-end"}
 				style={{ zIndex: 1 }}
 			>
-				<Toast show={show} onClose={toggleShow} delay={3000} autohide>
+				<Toast show={show} onClose={toggleShow} delay={4000} autohide>
 					<Toast.Header>
 						<strong className="me-auto">Alerta!</strong>
-						<small>11 mins ago</small>
+						<small>{date.getSeconds()} seg</small>
 					</Toast.Header>
 					<Toast.Body>{message ? message : "Alerta de prueba."}</Toast.Body>
 				</Toast>
