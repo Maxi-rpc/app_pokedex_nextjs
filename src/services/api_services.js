@@ -8,13 +8,17 @@ export const get_pokemons = async (offset, limit) => {
 	const offse = offset ? offset : 0;
 	const limite = limit ? limit : 9;
 	const API_POKEMONS = `https://pokeapi.co/api/v2/pokemon?limit=${limite}&offset=${offse}`;
-	const res = await axios.get(API_POKEMONS);
+	try {
+		const res = await axios.get(API_POKEMONS);
+		const { status } = res;
+		const { results } = res.data;
 
-	const { status } = res;
-	const { results } = res.data;
-
-	const datos = results;
-	return { status, datos };
+		const datos = results;
+		return { status, datos };
+	} catch (error) {
+		const status = 404;
+		return { status, error };
+	}
 };
 
 export const get_pokemon_by_name = async (pokename = "lucario") => {
