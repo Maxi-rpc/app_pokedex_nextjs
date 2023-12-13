@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 // imports
 import { Loader, NotifyAlerts, FormSearch } from "@/components";
 // bootstrap
-import { Form, Row } from "react-bootstrap";
+import { Row, Col, Card } from "react-bootstrap";
 // services
 import { get_pokemons } from "@/services";
 // page Home
@@ -43,6 +43,14 @@ export default function Home() {
 			{isAlert.show && <NotifyAlerts message={isAlert.msg} />}
 			<h1 className="text-center my-3">Pokedex Completa</h1>
 			<FormSearch onSubmit={handleSubmit} />
+			<div className="my-3"></div>
+			<Row>
+				<Col xs="3" sm="3" md="4">
+					<Card>
+						<h1>cardpokemon</h1>
+					</Card>
+				</Col>
+			</Row>
 		</>
 	);
 }

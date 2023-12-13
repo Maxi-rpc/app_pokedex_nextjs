@@ -20,7 +20,7 @@ export const HeaderComponents = () => {
 
 	return (
 		<>
-			<Navbar expand="lg" className="bg-body-tertiary">
+			<Navbar expand="lg" className="bg-body-tertiary mb-3">
 				<Container>
 					<Navbar.Brand href="#home">
 						Pokedex - Next JS - React Bootstrap
