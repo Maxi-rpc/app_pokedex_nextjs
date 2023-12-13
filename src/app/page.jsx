@@ -41,7 +41,7 @@ export default function Home() {
 	return (
 		<>
 			{isAlert.show && <NotifyAlerts message={isAlert.msg} />}
-			<h1>Home</h1>
+			<h1 className="text-center my-3">Pokedex Completa</h1>
 			<FormSearch onSubmit={handleSubmit} />
 		</>
 	);
