@@ -1,7 +1,13 @@
 "use client";
 import { useEffect, useState } from "react";
 // imports
-import { Loader, NotifyAlerts, FormSearch, CardComponents } from "@/components";
+import {
+	Loader,
+	NotifyAlerts,
+	FormSearch,
+	CardComponents,
+	ButtonFilterComponents,
+} from "@/components";
 // bootstrap
 import { Row, Col } from "react-bootstrap";
 // services
@@ -21,7 +27,7 @@ export default function Home() {
 
 	const ListPokemons = listItems.map((item) => (
 		<>
-			<Col key={item.name} xs="3" sm="3" md="3" lg="2">
+			<Col key={item.name} xs="6" sm="3" md="3" lg="2">
 				<CardComponents name={item.name} />
 			</Col>
 		</>
@@ -29,7 +35,7 @@ export default function Home() {
 
 	useEffect(() => {
 		const get_items = async () => {
-			const res = await get_pokemons();
+			const res = await get_pokemons(0, 150);
 			if (res.status == 200) {
 				setListItems(res.datos);
 			} else {
@@ -51,6 +57,8 @@ export default function Home() {
 			{isAlert.show && <NotifyAlerts message={isAlert.msg} />}
 			<h1 className="text-center my-3">Pokedex Completa</h1>
 			<FormSearch onSubmit={handleSubmit} />
+			<div className="my-3"></div>
+			<ButtonFilterComponents />
 			<div className="my-3"></div>
 			<Row>{ListPokemons}</Row>
 		</>

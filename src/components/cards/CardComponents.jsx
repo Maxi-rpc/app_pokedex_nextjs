@@ -43,13 +43,12 @@ export const CardComponents = ({ name }) => {
 
 	return (
 		<>
-			<Card>
+			<Card className="my-2">
 				<Carousel className="p-4">{ListSprites}</Carousel>
-				<Card.Body>
-					<Card.Title className="text-capitalize">
-						{parserName(details.id, details.name)}
-					</Card.Title>
-				</Card.Body>
+				<Card.Body></Card.Body>
+				<Card.Footer className="text-muted">
+					{parserName(details.id, details.name)}
+				</Card.Footer>
 			</Card>
 		</>
 	);

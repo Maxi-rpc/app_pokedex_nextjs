@@ -5,3 +5,4 @@ export { Loader } from "./loaders/Loader";
 export { NotifyAlerts } from "./notify/NotifyAlerts";
 export { FormSearch } from "./forms/FormSearch";
 export { CardComponents } from "./cards/CardComponents";
+export { ButtonFilterComponents } from "./buttons/ButtonFilterComponents";
