@@ -46,7 +46,7 @@ export const CardComponents = ({ name }) => {
 			<Card className="my-2">
 				<Carousel className="p-4">{ListSprites}</Carousel>
 				<Card.Body></Card.Body>
-				<Card.Footer className="text-muted">
+				<Card.Footer className="text-muted text-capitalize">
 					{parserName(details.id, details.name)}
 				</Card.Footer>
 			</Card>
